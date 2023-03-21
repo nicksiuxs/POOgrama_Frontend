@@ -4,7 +4,7 @@ const appInitialState = {
     user: {
         id: 0,
         email: "",
-        user: null
+        type: null
     }
 }
 
