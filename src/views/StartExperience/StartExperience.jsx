@@ -10,7 +10,7 @@ const StartExperience = () => {
     const navigate = useNavigate();
 
     return (
-        <main class="start-experience">
+        <main className="start-experience">
             <section>
                 <figure>
                     <img src={logo} alt="Poograma" />
