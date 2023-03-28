@@ -1,0 +1,13 @@
+.layout-cards{
+    width: 656px;
+    max-width: 656px;
+    border: var(--main-border-color) 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.layout-cards .title{
+    position: relative;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CardItem = () => {
+const CardItem = ({ data, handleDragging }) => {
     return (
         <div className='card-container'>
-            <p>content</p>
+            <p>{data.content}</p>
         </div>
     )
 }
