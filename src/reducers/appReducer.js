@@ -5,6 +5,10 @@ const appInitialState = {
         id: 0,
         email: "",
         type: null
+    },
+    navigation: {
+        actual: 1,
+        total: 2
     }
 }
 
