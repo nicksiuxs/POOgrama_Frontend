@@ -2,6 +2,7 @@ import React from 'react';
 import LeftSide from '../../components/LeftSide/LeftSide';
 // import ⁄logo from "../../assets/logo.png"
 import exampleImage from "../../assets/level-01.png"
+import { DragAndDrop } from '../../components/DragAndDrop/DragAndDrop';
 
 const levelInformation = {
     title: "Clase",
@@ -14,8 +15,12 @@ const levelInformation = {
 
 const Level1 = () => {
     return (
-        <main>
+        <main className="level">
             <LeftSide {...levelInformation} />
+            <div>
+                <h1>Holi</h1>
+                <DragAndDrop />
+            </div>
         </main>
     )
 }

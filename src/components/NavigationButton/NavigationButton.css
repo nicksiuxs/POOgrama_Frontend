@@ -1,0 +1,26 @@
+.navigation-button{
+    display: flex;
+    font-size: 20px;
+    color: var( --second-bg-color);
+}
+
+.navigation-button button{
+    padding: 0px 8px 0px 8px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--third-bg-color);
+}
+
+.navigation-button div{
+    padding: 0px 8px 0px 8px;
+    background-color: var(--third-bg-color);
+    margin: 0 3px 0 3px;
+}
+
+.navigation-button button:first-child{
+    border-radius: 8px 0 0 8px;
+}
+
+.navigation-button button:last-child{
+    border-radius: 0 8px 8px 0;
+}

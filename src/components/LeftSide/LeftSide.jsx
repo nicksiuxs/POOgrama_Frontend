@@ -1,4 +1,5 @@
 import React from 'react';
+import NavigationButton from '../NavigationButton/NavigationButton';
 import "./LeftSide.css";
 
 const LeftSide = ({ title, definition, example, imageExample, exampleDescription, activity }) => {
@@ -12,6 +13,7 @@ const LeftSide = ({ title, definition, example, imageExample, exampleDescription
             </figure>
             <p className="left-side-example-description">{exampleDescription}</p>
             <p>{activity}</p>
+            <NavigationButton />
         </aside>
     )
 }
