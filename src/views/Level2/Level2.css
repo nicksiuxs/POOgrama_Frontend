@@ -1,0 +1,49 @@
+main {
+    display: flex;
+}
+
+main > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+main > div button {
+    height: 30px;
+    margin: 20px 10px;
+}
+
+.fruits-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 20px 0;
+}
+
+.fruits-container div {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 80%;
+}
+
+.fruits-container img {
+    margin: 10px 20px;
+}
+
+.fruit > img {
+    height: 11vh;
+}
+
+.apple > img {
+    height: 9vh;
+}
+
+.carrot > img, .pineapple > img {
+    height: 13vh;
+}
