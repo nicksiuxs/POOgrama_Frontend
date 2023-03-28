@@ -14,3 +14,7 @@ body{
     background-color: var(--main-bg-color);
     color: var(--main-font-color)
 }
+
+.level{
+    display: flex;
+}
