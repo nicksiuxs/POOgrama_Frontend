@@ -2,7 +2,7 @@ import React from 'react';
 import LeftSide from '../../components/LeftSide/LeftSide';
 import './Level2.css'
 // import ⁄logo from "../../assets/logo.png"
-import exampleImage from "../../assets/example2.png"
+import exampleImage from "../../assets/atributoExample.png"
 import fruitClass from "../..//assets/fruitClass.png"
 import onion from "../..//assets/onion.png"
 import apple from "../..//assets/apple.png"
@@ -12,12 +12,12 @@ import watermelon from "../..//assets/watermelon.png"
 import Button from '../../components/Button/Button';
 
 const levelInformation = {
-    title: "Objeto",
-    definition: "Un objeto es un ente perteneciente a una clase, un elemento creado a partir de esa plantilla llamada clase. Los diferentes objetos existentes pueden tener diferentes características.",
+    title: "Atributo",
+    definition: "En una clase, un atributo es una característica de la entidad que se está representando. Una clase se compone de un conjunto de atributos que lo definen. Usemos el ejemplo anterior de la clase persona para entender mejor.",
     example: "Para brindarte una mejor ayuda, puedes observar el siguiente ejemplo.",
     imageExample: exampleImage,
-    exampleDescription: "En el ejemplo vemos a la izquierda la clase fruta, la plantilla de la entidad. A la derecha observamos 3 entes u objetos creados a partir de esta clase.",
-    activity: "Tienes tres clases, la clase Vehiculo, Animal y Persona. Arrastrar los objetos identificando a la clase a la que pertenecen."
+    exampleDescription: "Como observamos, la clase persona se compone de unas características, para este ejemplo usamos algunas más conocidas y fáciles de identificar. Toda persona tiene nombre, edad, peso y género.",
+    activity: "A continuación, debes arrastrar a la clase Auto en la sección de la derecha, los atributos correctos que consideres que definen a esta clase, estos atributos los puedes encontrar en la sección inferior de la derecha."
 }
 
 const Level2 = () => {
@@ -49,7 +49,7 @@ const Level2 = () => {
                         </figure>
                     </div>
                 </div>
-                <Button title="Verificar respuesta" onClick={() => {}}/>
+                <Button title="Verificar respuesta" onClick={() => { }} />
             </div>
         </main>
     )

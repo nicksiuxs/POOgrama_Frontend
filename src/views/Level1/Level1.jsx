@@ -18,7 +18,6 @@ const Level1 = () => {
         <main className="level">
             <LeftSide {...levelInformation} />
             <div>
-                <h1>Holi</h1>
                 <DragAndDrop />
             </div>
         </main>
