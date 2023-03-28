@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import useAppContext from '../../customHooks/useAppContext';
 import TYPES from '../../reducers/types';
-import "./LoginStudent.css"
+import LoginController from '../../controllers/login/LoginController';
+import Alert from '../../components/Alert/Alert';
+import "./LoginStudent.css";
 
 const LoginStudent = () => {
 
     const [user, setUser] = useState({ email: "", password: "" });
+    const [error, setError] = useState({ isPresent: false, message: ""});
     const { dispatch } = useAppContext()
 
     const navigate = useNavigate();
@@ -19,8 +22,10 @@ const LoginStudent = () => {
     const handleOnSubmit = (event) => {
         event.preventDefault();
         dispatch({ type: TYPES.LOGIN, payload: user });
-        navigate("/nivel/1")
+        //navigate("/nivel/1")
     }
+
+    const loginUser = LoginController.login;
 
     return (
         <main className="login-student">
@@ -34,8 +39,25 @@ const LoginStudent = () => {
                     <label>Contraseña</label>
                     <input type="password" name="password" value={user.password} onChange={handleOnChange} />
                 </div>
-                <Button title={"Iniciar sesión"} />
+                <Button title={"Iniciar sesión"} onClick={async () => {
+                    try {
+                        const userAuth = await loginUser(user.email, user.password);
+                        if (userAuth !== null){
+                            console.log(userAuth);
+                        }
+                    } catch (error) {
+                        setError({isPresent: true, message: error.code})
+                    }
+                }} />
             </form>
+
+            {error.isPresent ?
+                <Alert text={error.message} onClick={() => {
+                    setError(error.isPresent = false)
+                }}/>
+                :
+                null
+            }
         </main>
     )
 }
