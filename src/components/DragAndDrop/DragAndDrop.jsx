@@ -1,22 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ContainerCards from '../ContainerCards/ContainerCards'
+import useDragAndDrop from '../../customHooks/useDragAndDrop'
 
 const DragAndDrop = ({ containers, items }) => {
-    const [isDragging, setIsDragging] = useState(false)
-    const handleDragging = (dragging) => setIsDragging(dragging);
-
-    const [listItems, setListItems] = useState(items);
-
-    const handleUpdateList = (id, title) => {
-        let card = listItems.find(item => item.id === id)
-        if (card && card.class !== title) {
-            card.class = title;
-            setListItems(prev => ([
-                card,
-                ...prev.filter(item => item.id !== id)
-            ]))
-        }
-    }
+    const { isDragging, listItems, handleDragging, handleUpdateList } = useDragAndDrop(items)
 
     return (
         <div className="grid">
@@ -24,7 +11,7 @@ const DragAndDrop = ({ containers, items }) => {
                 containers.map(container => (
                     <ContainerCards
                         title={container.title}
-                        items={items}
+                        items={listItems}
                         key={container.title}
                         isDragging={isDragging}
                         handleDragging={handleDragging}
