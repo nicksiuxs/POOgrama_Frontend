@@ -9,6 +9,10 @@ const appInitialState = {
     navigation: {
         current: 1,
         total: 2
+    },
+    total: {
+        totalStars: 0,
+        totalAttempts: 0,
     }
 }
 

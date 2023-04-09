@@ -1,0 +1,9 @@
+.total-stars{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+} 
+
+.total-stars img{
+    margin-right: 5px;
+}
