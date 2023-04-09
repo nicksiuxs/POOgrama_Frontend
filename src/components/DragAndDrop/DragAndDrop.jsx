@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
-import data from '../../views/Level1/dataLevel1'
+import React from 'react'
 import ContainerCards from '../ContainerCards/ContainerCards'
 
-export const DragAndDrop = () => {
-    const [isDragging, setIsDragging] = useState(false);
-
-    const handleDragging = (dragging) => setIsDragging(dragging);
-
+const DragAndDrop = ({ containers, items }) => {
     return (
         <div className="grid">
-            <ContainerCards
-                status={"Fruta"}
-                items={data}
-            />
+            {
+                containers.map(container => (
+                    <ContainerCards
+                        title={container.title}
+                        items={items}
+                        key={container.title}
+                    />
+                ))
+            }
         </div>
     )
 }
+
+export default DragAndDrop
