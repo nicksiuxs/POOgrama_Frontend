@@ -1,4 +1,5 @@
 import React from 'react'
+import "./CardItem.css";
 
 const CardItem = ({ data, handleDragging }) => {
 
@@ -18,7 +19,7 @@ const CardItem = ({ data, handleDragging }) => {
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
         >
-            <p>{data.name}</p>
+            <img src={data.img} alt={data.name} />
         </div>
     )
 }
