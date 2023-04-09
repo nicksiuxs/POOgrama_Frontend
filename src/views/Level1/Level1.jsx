@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LeftSide from "../../components/LeftSide/LeftSide";
 import exampleImage from "../../assets/level-01.png";
 import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
@@ -28,6 +28,7 @@ const Level1 = () => {
         { id: 4, name: "Zanahoria", class: "Vegetal", img: "" },
         { id: 5, name: "Sandía", class: "Fruta", img: "" }
     ];
+
     return (
         <main className="level">
             <LeftSide {...levelInformation} />
