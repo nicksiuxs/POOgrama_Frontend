@@ -7,7 +7,7 @@ const appInitialState = {
         type: null
     },
     navigation: {
-        actual: 1,
+        current: 1,
         total: 2
     }
 }
@@ -25,6 +25,24 @@ const appReducer = (state, action) => {
             return { ...state, user: { id, email, user } }
         case TYPES.LOGOUT:
             return appInitialState;
+        case TYPES.NEXT_LEVEL:
+            if (state.navigation.current >= state.navigation.total) {
+                const newNavigation = {
+                    current: state.navigation.total,
+                    total: state.navigation.total
+                }
+                return { ...state, navigation: newNavigation }
+            }
+            return { ...state, navigation: { current: (state.navigation.current + 1), total: state.navigation.total } }
+        case TYPES.PREVIOUS_LEVEL:
+            if (state.navigation.current <= 1) {
+                const newNavigation = {
+                    current: 1,
+                    total: state.navigation.total
+                }
+                return { ...state, navigation: newNavigation }
+            }
+            return { ...state, navigation: { current: (state.navigation.current - 1), total: state.navigation.total } }
         default:
             return state
     }

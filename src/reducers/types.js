@@ -3,7 +3,9 @@
  */
 const TYPES = {
     LOGIN: "LOGIN",
-    LOGOUT: "LOGOUT"
+    LOGOUT: "LOGOUT",
+    NEXT_LEVEL: "NEXT_LEVEL",
+    PREVIOUS_LEVEL: "PREVIOUS_LEVEL"
 }
 
 export default TYPES;
