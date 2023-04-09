@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ContainerCards from '../ContainerCards/ContainerCards'
 
 const DragAndDrop = ({ containers, items }) => {
+    const [isDragging, setIsDragging] = useState(false)
+
+    const handleDragging = (dragging) => setIsDragging(dragging);
+
     return (
         <div className="grid">
             {
@@ -10,6 +14,8 @@ const DragAndDrop = ({ containers, items }) => {
                         title={container.title}
                         items={items}
                         key={container.title}
+                        isDragging={isDragging}
+                        handleDragging={handleDragging}
                     />
                 ))
             }

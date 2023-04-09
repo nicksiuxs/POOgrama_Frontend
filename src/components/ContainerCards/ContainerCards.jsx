@@ -4,7 +4,7 @@ import CardItem from '../CardItem/CardItem';
 
 import "./ContainerCards.css";
 
-const ContainerCards = ({ title, items = [] }) => {
+const ContainerCards = ({ title, items = [], handleDragging }) => {
     return (
         <div className="layout-cards" >
             <p className='title'>{title}</p>
@@ -14,6 +14,7 @@ const ContainerCards = ({ title, items = [] }) => {
                     <CardItem
                         data={item}
                         key={item.id}
+                        handleDragging={handleDragging}
                     />
                 ))
             }
