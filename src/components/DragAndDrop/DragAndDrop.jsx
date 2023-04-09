@@ -1,24 +1,10 @@
-import React from 'react'
-import ContainerCards from '../ContainerCards/ContainerCards'
-import useDragAndDrop from '../../customHooks/useDragAndDrop'
+import React from 'react';
 
-const DragAndDrop = ({ containers, items }) => {
-    const { isDragging, listItems, handleDragging, handleUpdateList } = useDragAndDrop(items);
+const DragAndDrop = ({ children }) => {
 
     return (
         <div className="grid">
-            {
-                containers.map(container => (
-                    <ContainerCards
-                        container={container}
-                        items={listItems}
-                        key={container.title}
-                        isDragging={isDragging}
-                        handleDragging={handleDragging}
-                        handleUpdateList={handleUpdateList}
-                    />
-                ))
-            }
+            {children}
         </div>
     )
 }

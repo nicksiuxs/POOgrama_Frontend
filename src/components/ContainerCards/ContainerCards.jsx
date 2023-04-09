@@ -31,7 +31,7 @@ const ContainerCards = ({
             {isABox ? <p className="title">{title}</p> : null}
             <div className="elements-containers">
                 {
-                    !isABox ? items.map(
+                    items.map(
                         (item) => {
                             return (<CardItem
                                 data={item}
@@ -39,7 +39,7 @@ const ContainerCards = ({
                                 handleDragging={handleDragging}
                             />)
                         }
-                    ) : null
+                    )
                 }
             </div>
         </div>
