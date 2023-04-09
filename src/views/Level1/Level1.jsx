@@ -5,6 +5,7 @@ import { levelInformation, containers, data } from "./dataLevel1";
 import useDragAndDrop from "../../customHooks/useDragAndDrop";
 import ContainerCards from "../../components/ContainerCards/ContainerCards";
 import Button from "../../components/Button/Button";
+import "./Level1.css";
 
 const Level1 = () => {
     const [fruits, setFruits] = useState([]);
@@ -17,7 +18,7 @@ const Level1 = () => {
     return (
         <main className="level">
             <LeftSide {...levelInformation} />
-            <div>
+            <div className="right-side">
                 <DragAndDrop>
                     <ContainerCards
                         container={containers[0]}

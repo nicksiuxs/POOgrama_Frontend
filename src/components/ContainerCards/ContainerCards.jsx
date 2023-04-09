@@ -24,7 +24,7 @@ const ContainerCards = ({
 
     return (
         <div
-            className={"layout-cards"}
+            className={`layout-cards ${isABox ? "" : " layout-cards-no-border"}`}
             onDragOver={handleDragOver}
             onDrop={handleDrop}
         >

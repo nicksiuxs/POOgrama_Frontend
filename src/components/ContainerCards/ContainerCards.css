@@ -2,7 +2,11 @@
     width: 656px;
     max-width: 656px;
     border: var(--main-border-color) 3px solid;
-    margin-bottom: 200px;
+    min-height: 350px;
+}
+
+.layout-cards-no-border{
+    border: none;
 }
 
 .layout-cards .title{
@@ -26,4 +30,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
