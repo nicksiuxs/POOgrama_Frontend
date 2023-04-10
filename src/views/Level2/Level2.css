@@ -22,6 +22,13 @@ drop-zone {
     padding: 10px;
 }
 
+.right-side {
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0 0 0;
+    position: relative;
+}
+
 .drag-item {
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(12px + 0.5vw);
@@ -57,4 +64,36 @@ drop-zone {
 .drop-zone-0 .drag-item {
     margin: 5px 5%;
     flex-basis: 40%;
+}
+
+.car-section{
+    position: relative;
+}
+
+.car-section #drop-zone-1{
+    position: absolute;
+    top: -55px;
+    left: 185px;
+    z-index: 10;
+}
+
+.car-section #drop-zone-2{
+    position: absolute;
+    top: 160px;
+    right: -195px;
+    z-index: 10;
+}
+
+.car-section #drop-zone-3{
+    position: absolute;
+    bottom: -55px;
+    left: 185px;
+    z-index: 10;
+}
+
+.car-section #drop-zone-4{
+    position: absolute;
+    top: 152px;
+    left: -195px;
+    z-index: 10;
 }
