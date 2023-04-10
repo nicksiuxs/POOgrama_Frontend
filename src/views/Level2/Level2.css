@@ -2,7 +2,7 @@ main {
     display: flex;
 }
 
-main > div {
+main>div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,40 +10,51 @@ main > div {
     width: 100%;
 }
 
-main > div button {
+main>div button {
     height: fit-content;
     margin: 20px 10px;
 }
 
-.fruits-container {
+drop-zone {
+    border: solid 2px black;
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+}
+
+.drag-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(12px + 0.5vw);
+    text-align: center;
+}
+
+.container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.drop-box {
+    width: 180px;
+    height: 40px;
+    border: dotted 2px white;
+    display: flex;
     justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 20px 0;
+    align-items: center;
 }
 
-.fruits-container div {
+.drop-box .drag-item {
+    width: 98%;
+}
+
+.drop-zone-0 {
     display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    width: 80%;
+    flex-wrap: wrap;
+    width: 40%;
+    padding: 20px 0;
+    border: solid 2px white;
 }
 
-.fruits-container img {
-    margin: 10px 20px;
-}
-
-.fruit > img {
-    height: 11vh;
-}
-
-.apple > img {
-    height: 9vh;
-}
-
-.carrot > img, .pineapple > img {
-    height: 13vh;
+.drop-zone-0 .drag-item {
+    margin: 5px 5%;
+    flex-basis: 40%;
 }

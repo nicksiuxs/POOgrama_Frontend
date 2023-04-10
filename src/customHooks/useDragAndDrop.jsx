@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useDragAndDrop = (initialState, handleSetFruits) => {
+const useDragAndDrop = (initialState, handleSetElements) => {
     const [isDragging, setIsDragging] = useState(false);
     const [listItems, setListItems] = useState(initialState);
 
@@ -9,7 +9,7 @@ const useDragAndDrop = (initialState, handleSetFruits) => {
         let card = listItems.find((item) => item.id === id);
         const newState = listItems.filter(item => item.id !== card.id)
         setListItems(newState);
-        handleSetFruits(card)
+        handleSetElements(card)
 
     };
 

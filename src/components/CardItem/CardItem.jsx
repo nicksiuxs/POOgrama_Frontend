@@ -19,7 +19,7 @@ const CardItem = ({ data, handleDragging }) => {
             onDragStart={handleDragStart}
             onDragEnd={handleDragEnd}
         >
-            <img src={data.img} alt={data.name} />
+            { data.img === null ? <p>{data.name}</p> : <img src={data.img} alt={data.name} /> }
         </div>
     )
 }
