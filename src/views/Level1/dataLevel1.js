@@ -31,4 +31,18 @@ const data = [
     { id: 5, name: "Sandía", class: "Fruta", img: Watermelon },
 ];
 
-export { levelInformation, containers, data };
+const incorrectModal = {
+    isShow: true,
+    title: "¡Incorrecto!",
+    message: "Vuelve a revisar los objetos seleccionados, revisa las notas e intenta nuevamente.",
+    labelButton: "Reintentar"
+}
+
+const correctModal = {
+    isShow: true,
+    title: "!Correcto!",
+    message: "",
+    labelButton: "Siguiente nivel"
+}
+
+export { levelInformation, containers, data, correctModal, incorrectModal };

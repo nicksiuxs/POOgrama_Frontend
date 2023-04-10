@@ -10,7 +10,6 @@ const NavigationButton = () => {
     const navigate = useNavigate();
 
     const handleNextLevel = () => {
-        console.log("siguiente")
         dispatch({ type: TYPES.NEXT_LEVEL });
     }
 

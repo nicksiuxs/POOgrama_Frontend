@@ -17,11 +17,16 @@ const useDragAndDrop = (initialState, handleSetFruits) => {
         setIsDragging(dragging)
     };
 
+    const handleResetList = () => {
+        setListItems(initialState);
+    }
+
     return {
         isDragging,
         listItems,
         handleUpdateList,
         handleDragging,
+        handleResetList
     }
 };
 
