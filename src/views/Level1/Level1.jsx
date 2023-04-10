@@ -37,6 +37,7 @@ const Level1 = () => {
     const handleCheckAnswers = () => {
         const isCorrect = fruits.every(fruit => fruit.class === "Fruta");
         if (!isCorrect) {
+            dispatch({ type: TYPES.ADD_ATTEMP });
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
         } else {
             if (fruits.length === 3) {

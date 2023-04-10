@@ -12,10 +12,10 @@ const appInitialState = {
     },
     score: {
         "1": {
-            attemps: 0
+            attemps: 1
         },
         "2": {
-            attemps: 0
+            attemps: 1
         }
     },
     total: {
@@ -55,6 +55,11 @@ const appReducer = (state, action) => {
                 return { ...state, navigation: newNavigation }
             }
             return { ...state, navigation: { current: (state.navigation.current - 1), total: state.navigation.total } }
+        case TYPES.ADD_ATTEMP:
+            const currentLevel = state.navigation.current;
+            const newAttemp = state.score[currentLevel].attemps + 1;
+
+            return { ...state, score: { ...state.score, [currentLevel]: { attemps: newAttemp } } }
         default:
             return state
     }
