@@ -1,6 +1,7 @@
 .right-side{
     justify-content: space-between;
     padding: 81px 0 60px;
+    position: relative;
 }
 
 .layout-cards-no-border{

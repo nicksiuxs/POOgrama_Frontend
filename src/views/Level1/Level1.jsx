@@ -9,6 +9,7 @@ import "./Level1.css";
 import Modal from "../../components/Modal/Modal";
 import useAppContext from "../../customHooks/useAppContext";
 import TYPES from "../../reducers/types";
+import LevelStars from "../../components/LevelStars/LevelStars";
 
 const Level1 = () => {
     const [fruits, setFruits] = useState([]);
@@ -49,6 +50,7 @@ const Level1 = () => {
         <main className="level">
             <LeftSide {...levelInformation} />
             <div className="right-side">
+                <LevelStars />
                 <DragAndDrop>
                     <ContainerCards
                         container={containers[0]}

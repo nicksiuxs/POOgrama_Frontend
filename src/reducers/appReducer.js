@@ -10,6 +10,14 @@ const appInitialState = {
         current: 1,
         total: 2
     },
+    score: {
+        "1": {
+            attemps: 0
+        },
+        "2": {
+            attemps: 0
+        }
+    },
     total: {
         totalStars: 0,
         totalAttempts: 0,
