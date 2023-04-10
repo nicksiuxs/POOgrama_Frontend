@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import LeftSide from '../../components/LeftSide/LeftSide';
 import './Level2.css'
