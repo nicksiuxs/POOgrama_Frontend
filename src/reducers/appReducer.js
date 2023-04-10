@@ -58,8 +58,20 @@ const appReducer = (state, action) => {
         case TYPES.ADD_ATTEMP:
             const currentLevel = state.navigation.current;
             const newAttemp = state.score[currentLevel].attemps + 1;
-
             return { ...state, score: { ...state.score, [currentLevel]: { attemps: newAttemp } } }
+        case TYPES.ADD_STARS:
+            const level = state.navigation.current;
+            const attemps = state.score[level].attemps;
+            const totalStars = state.total.totalStars;
+            const newTotalAttempts = state.total.totalAttempts + attemps;
+            if (attemps <= 1) {
+                return { ...state, total: { totalStars: totalStars + 3, totalAttempts: newTotalAttempts } }
+            } else if (attemps > 1 && attemps <= 2) {
+                return { ...state, total: { totalStars: totalStars + 2, totalAttempts: newTotalAttempts } }
+            } else {
+                return { ...state, total: { totalStars: totalStars + 1, totalAttempts: newTotalAttempts } }
+            }
+
         default:
             return state
     }

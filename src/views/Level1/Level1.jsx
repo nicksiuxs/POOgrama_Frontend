@@ -41,6 +41,7 @@ const Level1 = () => {
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
         } else {
             if (fruits.length === 3) {
+                dispatch({ type: TYPES.ADD_STARS });
                 setModal({ ...correctModal, handleClick: handleRightAnswer })
             }
         }
