@@ -60,7 +60,7 @@ const appReducer = (state, action) => {
         case TYPES.ADD_ATTEMP:
             const currentLevel = state.navigation.current;
             const newAttemp = state.score[currentLevel].attemps + 1;
-            return { ...state, score: { ...state.score, [currentLevel]: { attemps: newAttemp } } }
+            return { ...state, score: { ...state.score, [currentLevel]: { ...state.score[currentLevel], attemps: newAttemp } } }
         case TYPES.ADD_STARS:
             const level = state.navigation.current;
             const attemps = state.score[level].attemps;

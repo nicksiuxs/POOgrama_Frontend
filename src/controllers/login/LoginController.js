@@ -16,13 +16,13 @@ class LoginController {
     }
 
     static async getUser(uid){
-        const response = await fetch(`http://localhost:5000/watchful-audio-293805/us-central1/app/user/${uid}`);
+        const response = await fetch(`https://us-central1-watchful-audio-293805.cloudfunctions.net/app/user/${uid}`);
         const data = await response.json();
         return data;
     }
 
     static async createUser({name, email, password}) {
-        const response = await fetch('http://localhost:5000/watchful-audio-293805/us-central1/app/create', {
+        const response = await fetch('https://us-central1-watchful-audio-293805.cloudfunctions.net/app/create', {
             method: "POST",
             headers: {
                 "Accept": "application/json",
