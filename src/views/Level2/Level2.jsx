@@ -1,19 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import LeftSide from '../../components/LeftSide/LeftSide';
 import './Level2.css'
 import Button from '../../components/Button/Button';
-import DragAndDrop from "../../components/DragAndDrop/DragAndDrop";
-import { levelInformation, containers, data, correctModal, incorrectModal } from "./dataLevel2";
-import useDragAndDrop from "../../customHooks/useDragAndDrop";
-import ContainerCards from "../../components/ContainerCards/ContainerCards";
+import { levelInformation, containers, data, correctModal, incorrectModal, correctAnswers } from "./dataLevel2";
+
 import Modal from "../../components/Modal/Modal";
 import useAppContext from "../../customHooks/useAppContext";
 import TYPES from "../../reducers/types";
 import LevelStars from "../../components/LevelStars/LevelStars";
+import Car from "../../assets/car.png";
 
 const Level2 = () => {
 
     const [attributes, setAttributes] = useState([]);
+    const [answers, setAnswers] = useState([]);
     const [modal, setModal] = useState({ isShow: false, title: "", message: "", labelButton: "" })
 
     const { dispatch } = useAppContext();
@@ -31,10 +32,6 @@ const Level2 = () => {
         });
     }, [])
 
-    const handleSetAttributes = (element) => {
-        setAttributes([...attributes, element])
-    }
-
     const handleWrongAnswer = () => {
         setAttributes([]);
         setModal({ ...modal, isShow: false });
@@ -45,8 +42,18 @@ const Level2 = () => {
         dispatch({ type: TYPES.NEXT_LEVEL });
     }
 
+    const getAnswers = () => {
+        const answer1 = document.getElementById("drop-zone-1").childNodes[0]?.textContent;
+        const answer2 = document.getElementById("drop-zone-2").childNodes[0]?.textContent;
+        const answer3 = document.getElementById("drop-zone-3").childNodes[0]?.textContent;
+        const answer4 = document.getElementById("drop-zone-4").childNodes[0]?.textContent;
+        const auxAnswer = [answer1, answer2, answer3, answer4].filter(answer => answer !== undefined);
+        setAnswers(auxAnswer)
+    }
+
     const handleCheckAnswers = () => {
-        const isCorrect = attributes.every(attribute => attribute.class === "atributo");
+        const isCorrect = answers.every(answer => correctAnswers.includes(answer));
+
         if (!isCorrect) {
             dispatch({ type: TYPES.ADD_ATTEMP });
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
@@ -74,18 +81,19 @@ const Level2 = () => {
         const fromZone = document.getElementById(event.dataTransfer.getData("from"));
         const element = data[draggedItemId]
 
-        if(dropZone.id !== "drop-zone-0"){
-            if(!attributes.some(e => e.id === element.id)){
+        if (dropZone.id !== "drop-zone-0") {
+            if (!attributes.some(e => e.id === element.id)) {
                 setAttributes([...attributes, element])
             }
             let firstChild = dropZone.firstChild;
-            if(firstChild !== null){
+            if (firstChild !== null) {
                 fromZone.appendChild(firstChild);
             }
         } else {
-            setAttributes(attributes.filter(e => {return e.id !== element.id}))
+            setAttributes(attributes.filter(e => { return e.id !== element.id }))
         }
         dropZone.appendChild(draggedItem);
+        getAnswers();
     }
 
     return (
@@ -93,27 +101,31 @@ const Level2 = () => {
             <LeftSide {...levelInformation} />
             <div className="right-side">
                 <LevelStars />
-                {
-                    containers.map((_, i) => {
-                        return <div key={i} className="drop-zone drop-box" id={`drop-zone-${i+1}`}></div>
-                    })
-                }
+                <div className="car-section">
+                    <img src={Car} alt="ejercicio carro" />
+                    {
+                        containers.map((_, i) => {
+                            return <div key={i} className="drop-zone drop-box" id={`drop-zone-${i + 1}`}></div>
+                        })
+                    }
+                </div>
                 <div className="drop-zone drop-zone-0" id="drop-zone-0">
                     {
                         data.map(
                             (item, i) => {
                                 return (<div
                                     key={i}
-                                    className="drag-item" 
-                                    draggable="true" 
+                                    className="drag-item"
+                                    draggable="true"
                                     id={i}>
-                                        {item.name}
-                                    </div>
-                            )}
+                                    {item.name}
+                                </div>
+                                )
+                            }
                         )
                     }
                 </div>
-                <Button title="Verificar respuesta" onClick={handleCheckAnswers} disabled={attributes.length > 0 ? false : true} />
+                <Button title="Verificar respuesta" onClick={handleCheckAnswers} disabled={answers.length > 3 ? false : true} />
             </div>
             {modal.isShow ? <Modal {...modal} /> : null}
         </main>

@@ -27,6 +27,8 @@ const data = [
     { id: 8, name: "modelo", class: "atributo", img: null },
 ];
 
+const correctAnswers = ["color", "modelo", "pasajeros", "marca"];
+
 const incorrectModal = {
     isShow: true,
     title: "¡Incorrecto!",
@@ -41,4 +43,4 @@ const correctModal = {
     labelButton: "Siguiente nivel"
 }
 
-export { levelInformation, containers, data, correctModal, incorrectModal };
+export { levelInformation, containers, data, correctModal, incorrectModal, correctAnswers };

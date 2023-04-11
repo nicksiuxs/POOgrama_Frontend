@@ -3,12 +3,12 @@ import useAppContext from '../../customHooks/useAppContext';
 import Star from "../../assets/star.png";
 import "./TotalStars.css";
 
-const TotalStars = () => {
+const TotalStars = ({ starImg }) => {
     const { state: { total } } = useAppContext();
 
     return (
         <div className='total-stars'>
-            <img src={Star} alt="star" />
+            <img src={starImg ? starImg : Star} alt="star" />
             X {total.totalStars}
         </div>
     )
