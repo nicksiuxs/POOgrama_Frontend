@@ -25,6 +25,9 @@ const Login = () => {
                 {section === 0 ?
                     <LoginSection handleError={(error) => {
                         setAlert({ isPresent: true, message: error.code, type: "warning" })
+                        setTimeout(() => {
+                            setAlert({ isPresent: false, message: "", type: "" })
+                        }, 5000);
                     }}/>
                     :
                     <SignupSection  handleAlert={(error) => {
@@ -36,7 +39,7 @@ const Login = () => {
                         setAlert({ isPresent: true, message: "Usuario creado satisfactoriamente.", type: "success" })
                         setSection(0)
                         setTimeout(() => {
-                            setAlert({ isPresent: false, message: "" })
+                            setAlert({ isPresent: false, message: "", type: "" })
                         }, 5000);
                     }}/>
                 }
