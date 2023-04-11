@@ -10,7 +10,11 @@ const NavigationButton = () => {
     const navigate = useNavigate();
 
     const handleNextLevel = () => {
-        dispatch({ type: TYPES.NEXT_LEVEL });
+        if (current >= 2) {
+            navigate("/estadisticas");
+        } else {
+            dispatch({ type: TYPES.NEXT_LEVEL });
+        }
     }
 
     const handlePreviousLevel = () => {

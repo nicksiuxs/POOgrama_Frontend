@@ -7,6 +7,7 @@ import AppProvider from "./context/AppContext";
 import Login from "./views/Login/Login";
 import Level1 from "./views/Level1/Level1";
 import Level2 from "./views/Level2/Level2";
+import FinalStatistics from "./views/FinalStatistics/FinalStatistics";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/nivel/1" element={< Level1 />} />
           <Route path="/nivel/2" element={< Level2 />} />
+          <Route path="/estadisticas" element={< FinalStatistics />} />
         </Routes>
       </AppProvider>
     </BrowserRouter >
