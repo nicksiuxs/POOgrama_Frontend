@@ -12,6 +12,7 @@ const LoginSection = ({ handleError }) => {
     const navigate = useNavigate();
     const { dispatch } = useAppContext()
     const loginUser = LoginController.login;
+    const getUser = LoginController.getUser;
 
     const handleOnChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
@@ -23,7 +24,9 @@ const LoginSection = ({ handleError }) => {
         try {
             const userAuth = await loginUser(user.email, user.password);
             if (userAuth) {
-                dispatch({ type: TYPES.LOGIN, payload: user });
+                console.log(userAuth);
+                const userInfo = await getUser(userAuth.uid)
+                dispatch({ type: TYPES.LOGIN, payload: userInfo });
                 navigate("/nivel/1")
             }
         } catch (error) {

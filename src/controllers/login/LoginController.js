@@ -15,6 +15,12 @@ class LoginController {
         }
     }
 
+    static async getUser(uid){
+        const response = await fetch(`http://localhost:5000/watchful-audio-293805/us-central1/app/user/${uid}`);
+        const data = await response.json();
+        return data;
+    }
+
     static async createUser({name, email, password}) {
         const response = await fetch('http://localhost:5000/watchful-audio-293805/us-central1/app/create', {
             method: "POST",

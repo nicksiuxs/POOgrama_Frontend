@@ -12,9 +12,11 @@ const appInitialState = {
     },
     score: {
         "1": {
+            topic: "Clase",
             attemps: 1
         },
         "2": {
+            topic: "Atributo",
             attemps: 1
         }
     },
@@ -33,8 +35,8 @@ const appInitialState = {
 const appReducer = (state, action) => {
     switch (action.type) {
         case TYPES.LOGIN:
-            const { id, email, user } = action.payload;
-            return { ...state, user: { id, email, user } }
+            const { uid, email, name } = action.payload;
+            return { ...state, user: { uid, email, name } }
         case TYPES.LOGOUT:
             return appInitialState;
         case TYPES.NEXT_LEVEL:

@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LeftSide from '../../components/LeftSide/LeftSide';
 import './Level2.css'
 import Button from '../../components/Button/Button';
@@ -17,6 +18,7 @@ const Level2 = () => {
     const [answers, setAnswers] = useState([]);
     const [modal, setModal] = useState({ isShow: false, title: "", message: "", labelButton: "" })
 
+    const navigate = useNavigate();
     const { dispatch } = useAppContext();
 
     useEffect(() => {
@@ -40,6 +42,7 @@ const Level2 = () => {
     const handleRightAnswer = () => {
         setModal({ ...modal, isShow: false });
         dispatch({ type: TYPES.NEXT_LEVEL });
+        navigate("/estadisticas")
     }
 
     const getAnswers = () => {
@@ -56,12 +59,11 @@ const Level2 = () => {
 
         if (!isCorrect) {
             dispatch({ type: TYPES.ADD_ATTEMP });
+            console.log("attemp");
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
         } else {
-            if (attributes.length === 4) {
-                dispatch({ type: TYPES.ADD_STARS });
-                setModal({ ...correctModal, handleClick: handleRightAnswer })
-            }
+            dispatch({ type: TYPES.ADD_STARS });
+            setModal({ ...correctModal, handleClick: handleRightAnswer })
         }
     }
 

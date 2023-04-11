@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Alert from '../../components/Alert/Alert';
 import LoginSection from './LoginSection';
 import SignupSection from './SignupSection';
-import LoginController from '../../controllers/login/LoginController';
 import Button from '../../components/Button/Button';
 
 import "./Login.css"
