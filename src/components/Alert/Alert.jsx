@@ -1,13 +1,13 @@
 import './Alert.css'
 
-export default function Alert(props) {
+export default function Alert({text, onClick, type}) {
     return (
         <section id='alert' className="alertContainer">
-            <div className="alertDiv">
-                <div onClick={props.onClick}>
+            <div className={`alertDiv ${type}`}>
+                <p>{text}</p>
+                <div onClick={onClick}>
                     <p>X</p>
                 </div>
-                <p>{props.text}</p>
             </div>
         </section>
     );

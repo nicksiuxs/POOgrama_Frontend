@@ -14,6 +14,25 @@ class LoginController {
             }
         }
     }
+
+    static async createUser({name, email, password}) {
+        const response = await fetch('http://localhost:5000/watchful-audio-293805/us-central1/app/create', {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "access-control-allow-credentials": true,
+                "access-control-allow-methods": "GET, POST",
+                "access-control-allow-origin": "*",
+                "crossorigin": true,    
+                "mode": 'no-cors',
+            },
+            body: JSON.stringify({
+                name, email, password
+            }),
+        });
+        return response;
+    }
 }
 
 class LoginException extends Error {

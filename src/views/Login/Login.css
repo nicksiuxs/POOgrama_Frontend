@@ -1,4 +1,3 @@
-
 .login{
     background-color: var(--main-bg-color);
     height: 100vh;
@@ -7,34 +6,97 @@
     flex-direction: column;
     align-items: center;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-container {
+    background-color: var(--second-bg-color);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15px;
+    box-shadow: 0px 0px 23px 7px rgba(0,0,0,0.5);
+}
+
+.login-buttons {
+    margin: 40px;
+}
+
+.login-buttons .button{
+    margin: 0;
+    border-radius: 0;
+    width: 200px;
+    font-size: 20px;
+}
+
+.notSelected {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: .3s;
+}
+
+.selected {
+    background-color: white;
+    color: black;
+    transition: .3s;
+}
+
+.login-buttons .button:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    transition: .3s;
+}
+
+.login-buttons .login-button{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.login-buttons .signup-button{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .login h1{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 40px;
 }
 
 .login-form{
-    max-width: 40%;
-    width: 100%;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.login-form .button{
+    width: 100%;
+    margin: 40px 0;
+    transition: .3s;
+}
+
+.login-form .button:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: .3s;
 }
 
 .login-form .input{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    outline: none;
+    border: none;
+    font-size: 20px;
 }
 
 .login-form .input label{
     
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .login-form .input input{
     padding: 10px;
     border-radius: 10px;
+    outline: none;
+    border: none;
 }
