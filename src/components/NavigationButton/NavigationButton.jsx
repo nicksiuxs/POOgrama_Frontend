@@ -10,7 +10,7 @@ const NavigationButton = () => {
     const navigate = useNavigate();
 
     const handleNextLevel = () => {
-        if (current >= 2) {
+        if (current >= total) {
             navigate("/estadisticas");
         } else {
             dispatch({ type: TYPES.NEXT_LEVEL });
@@ -22,7 +22,7 @@ const NavigationButton = () => {
     }
 
     useEffect(() => {
-        // navigate("/nivel/" + current)
+        navigate("/nivel/" + current)
     }, [current, navigate])
 
 

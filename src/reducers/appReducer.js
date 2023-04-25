@@ -8,7 +8,7 @@ const appInitialState = {
     },
     navigation: {
         current: 1,
-        total: 2
+        total: 4
     },
     score: {
         "1": {
@@ -16,7 +16,15 @@ const appInitialState = {
             attemps: 1
         },
         "2": {
+            topic: "Objeto",
+            attemps: 1
+        },
+        "3": {
             topic: "Atributo",
+            attemps: 1
+        },
+        "4": {
+            topic: "Método",
             attemps: 1
         }
     },

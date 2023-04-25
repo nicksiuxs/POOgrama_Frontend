@@ -18,9 +18,13 @@ function App() {
         <Routes>
           <Route path="/" element={<StartExperience />} />
           <Route path="/login" element={<Login />}></Route>
+          {/* Clase */}
           <Route path="/nivel/1" element={< Level1 />} />
-          <Route path="/nivel/2" element={< Level2 />} />
-          <Route path="/nivel/3" element={< Level3 />} />
+          {/* Objeto */}
+          <Route path="/nivel/2" element={< Level3 />} />
+          {/* Atributo */}
+          <Route path="/nivel/3" element={< Level2 />} />
+          {/* Método */}
           <Route path="/nivel/4" element={< Level4 />} />
           <Route path="/estadisticas" element={< FinalStatistics />} />
         </Routes>
