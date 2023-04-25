@@ -22,7 +22,7 @@ const NavigationButton = () => {
     }
 
     useEffect(() => {
-        navigate("/nivel/" + current)
+        // navigate("/nivel/" + current)
     }, [current, navigate])
 
 
