@@ -1,0 +1,15 @@
+.drop-box {
+    width: 30%;
+    height: 100%;
+    border: dotted 2px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containers {
+    display: flex;
+    width: 75%;
+    height: 45%;
+    column-gap: 30px;
+}
