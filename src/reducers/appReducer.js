@@ -13,19 +13,19 @@ const appInitialState = {
     score: {
         "1": {
             topic: "Clase",
-            attemps: 1
+            attemps: 0
         },
         "2": {
             topic: "Objeto",
-            attemps: 1
+            attemps: 0
         },
         "3": {
             topic: "Atributo",
-            attemps: 1
+            attemps: 0
         },
         "4": {
             topic: "Método",
-            attemps: 1
+            attemps: 0
         }
     },
     total: {
@@ -74,9 +74,9 @@ const appReducer = (state, action) => {
             const attemps = state.score[level].attemps;
             const totalStars = state.total.totalStars;
             const newTotalAttempts = state.total.totalAttempts + attemps;
-            if (attemps <= 1) {
+            if (attemps < 1) {
                 return { ...state, total: { totalStars: totalStars + 3, totalAttempts: newTotalAttempts } }
-            } else if (attemps > 1 && attemps <= 2) {
+            } else if (attemps >= 1 && attemps < 2) {
                 return { ...state, total: { totalStars: totalStars + 2, totalAttempts: newTotalAttempts } }
             } else {
                 return { ...state, total: { totalStars: totalStars + 1, totalAttempts: newTotalAttempts } }

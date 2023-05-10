@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
     tableRow: {
-      flexDirection: 'row',
+        flexDirection: 'row',
     },
     tableCell: {
         margin: 'auto',
@@ -51,13 +51,20 @@ const styles = StyleSheet.create({
         borderBottomColor: '#333',
         backgroundColor: '#f0f0f0',
     },
-  });
+});
 
-const Results = ({user, scores}) => {
-    return(
+const handleAttemps = {
+    0: "0",
+    1: "1",
+    2: "2",
+    3: "3"
+}
+
+const Results = ({ user, scores }) => {
+    return (
         <Document>
             <Page style={styles.page}>
-                <Header name={user.name} email={user.email}/>
+                <Header name={user.name} email={user.email} />
                 <View style={styles.header}>
                     <Text style={styles.subtitle}>Resultados obtenidos</Text>
                 </View>
@@ -69,7 +76,7 @@ const Results = ({user, scores}) => {
                     {Object.keys(scores).map((score, index) => (
                         <View key={index} style={styles.tableRow}>
                             <Text style={styles.tableCell}>{scores[score].topic}</Text>
-                            <Text style={styles.tableCell}>{scores[score].attemps === 1 ? '3' : scores[score].attemps === 2 ? '2' : '1'}</Text>
+                            <Text style={styles.tableCell}>{handleAttemps[scores[score].attemps]}</Text>
                         </View>
                     ))}
                 </View>
