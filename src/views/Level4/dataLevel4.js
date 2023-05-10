@@ -9,6 +9,38 @@ const levelInformation = {
     activity: "A continuación, debes arrastrar a la clase Auto en la sección de la derecha, los métodos correctos que consideres que esta clase puede ejecutar, estos atributos los puedes encontrar en la sección inferior de la derecha."
 }
 
+const containers = [
+    { title: "método1", child: {} },
+    { title: "método2", child: {} },
+    { title: "método3", child: {} },
+    { title: "método4", child: {} },
+];
 
+const data = [
+    { id: 1, name: "caminar()", class: "método", img: null },
+    { id: 2, name: "encenderMotor()", class: "método", img: null },
+    { id: 3, name: "frenar()", class: "método", img: null },
+    { id: 4, name: "color", class: "atributo", img: null },
+    { id: 5, name: "apagarMotor()", class: "método", img: null },
+    { id: 6, name: "pasajeros", class: "atributo", img: null },
+    { id: 7, name: "acelerar()", class: "método", img: null },
+    { id: 8, name: "modelo", class: "atributo", img: null },
+];
 
-export { levelInformation };
+const correctAnswers = ["frenar()", "encenderMotor()", "apagarMotor()", "acelerar()"];
+
+const incorrectModal = {
+    isShow: true,
+    title: "¡Incorrecto!",
+    message: "Revisa nuevamente los atributos que pertenecen a la clase Auto. Inténtalo de nuevo.",
+    labelButton: "Reintentar"
+}
+
+const correctModal = {
+    isShow: true,
+    title: "!Correcto!",
+    message: "",
+    labelButton: "Siguiente nivel"
+}
+
+export { levelInformation, data, correctAnswers, containers, incorrectModal, correctModal };
