@@ -8,7 +8,7 @@ import LoginController from '../../controllers/login/LoginController'
 const LoginSection = ({ handleError }) => {
 
     const [user, setUser] = useState({ email: "", password: "" });
-    
+
     const navigate = useNavigate();
     const { dispatch } = useAppContext()
     const loginUser = LoginController.login;
@@ -20,21 +20,19 @@ const LoginSection = ({ handleError }) => {
 
     const handleOnSubmit = async (event) => {
         event.preventDefault();
-        
         try {
             const userAuth = await loginUser(user.email, user.password);
             if (userAuth) {
-                console.log(userAuth);
                 const userInfo = await getUser(userAuth.uid)
                 dispatch({ type: TYPES.LOGIN, payload: userInfo });
-                navigate("/nivel/1")
+                navigate("/nivel/1", { replace: true })
             }
         } catch (error) {
             handleError(error);
         }
     }
 
-    return(
+    return (
         <>
             <h1>Iniciar sesión</h1>
             <form className="login-form" onSubmit={handleOnSubmit}>
