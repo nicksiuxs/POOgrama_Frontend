@@ -45,8 +45,11 @@ const appReducer = (state, action) => {
     switch (action.type) {
         case TYPES.LOGIN:
             const { uid, email, name } = action.payload;
-            return { ...state, user: { uid, email, name, isLogged: true } }
+            const user = { uid, email, name, isLogged: true };
+            localStorage.setItem("currentUser", JSON.stringify(user));
+            return { ...state, user: user }
         case TYPES.LOGOUT:
+            localStorage.removeItem('currentUser');
             return appInitialState;
         case TYPES.NEXT_LEVEL:
             if (state.navigation.current >= state.navigation.total) {

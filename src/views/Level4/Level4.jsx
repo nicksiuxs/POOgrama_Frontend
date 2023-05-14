@@ -40,6 +40,7 @@ const Level4 = () => {
             dropzone.addEventListener("dragover", handleDragOver, false);
             dropzone.addEventListener("drop", handleDrop, false);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleWrongAnswer = () => {
