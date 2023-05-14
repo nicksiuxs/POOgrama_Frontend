@@ -9,22 +9,24 @@ import { PDFDownloadLink } from '@react-pdf/renderer';
 import Results from '../Results/Results';
 
 import Start from "../../assets/starfinal.png";
+import TYPES from '../../reducers/types';
 
 const FinalStatistics = () => {
 
-    const { state: { user } } = useAppContext();
-    const { state: { score } } = useAppContext();
+    const { state: { user, score }, dispatch } = useAppContext();
 
     const navigate = useNavigate()
-    /* const handleDownload = () => {
-        console.log(user);
-        console.log("descargando contenido")
-    } */
+
 
     const handleBack = () => {
         console.log(score);
-        navigate("/")
+        navigate("/nivel/1")
     }
+
+    const handelLogout = () => {
+        dispatch({ type: TYPES.LOGOUT })
+    }
+
     return (
         <main className='final-statistics'>
             <figure>
@@ -34,12 +36,13 @@ const FinalStatistics = () => {
             <TotalStars starImg={Start} />
             <div className='buttons-container'>
                 <PDFDownloadLink
-                    document={<Results user={user} scores={score}/>}
+                    document={<Results user={user} scores={score} />}
                     fileName={`Resultados_${user.name}.pdf`}
                 >
-                    <Button title="Descargar resultados"/>
+                    <Button title="Descargar resultados" />
                 </PDFDownloadLink>
                 <Button title="Volver al inicio" onClick={handleBack} />
+                <Button title="Cerrar sesión" onClick={handelLogout} />
             </div>
         </main>
     )

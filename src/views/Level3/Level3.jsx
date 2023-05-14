@@ -11,6 +11,7 @@ const Level3 = () => {
 
     const handleCheckAnswers = () => {
         console.log("confirmando")
+        setModal({ isShow: false, title: "", message: "", labelButton: "" })
     }
     return (
         <main>
