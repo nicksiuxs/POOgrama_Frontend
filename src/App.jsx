@@ -10,6 +10,7 @@ import Level2 from "./views/Level2/Level2";
 import Level3 from "./views/Level3/Level3";
 import FinalStatistics from "./views/FinalStatistics/FinalStatistics";
 import Level4 from "./views/Level4/Level4";
+import PrivateRoutes from "./components/PrivateRoutes/PrivateRoutes";
 
 function App() {
   return (
@@ -17,16 +18,20 @@ function App() {
       <AppProvider>
         <Routes>
           <Route path="/" element={<StartExperience />} />
-          <Route path="/login" element={<Login />}></Route>
-          {/* Clase */}
-          <Route path="/nivel/1" element={< Level1 />} />
-          {/* Objeto */}
-          <Route path="/nivel/2" element={< Level3 />} />
-          {/* Atributo */}
-          <Route path="/nivel/3" element={< Level2 />} />
-          {/* Método */}
-          <Route path="/nivel/4" element={< Level4 />} />
-          <Route path="/estadisticas" element={< FinalStatistics />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<PrivateRoutes>
+            <Routes>
+              {/* Clase */}
+              <Route path="/nivel/1" element={< Level1 />} />
+              {/* Objeto */}
+              <Route path="/nivel/2" element={< Level3 />} />
+              {/* Atributo */}
+              <Route path="/nivel/3" element={< Level2 />} />
+              {/* Método */}
+              <Route path="/nivel/4" element={< Level4 />} />
+              <Route path="/estadisticas" element={< FinalStatistics />} />
+            </Routes>
+          </PrivateRoutes>} />
         </Routes>
       </AppProvider>
     </BrowserRouter >

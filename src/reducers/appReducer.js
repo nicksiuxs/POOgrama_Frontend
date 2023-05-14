@@ -4,7 +4,8 @@ const appInitialState = {
     user: {
         id: 0,
         email: "",
-        type: null
+        type: null,
+        isLogged: false
     },
     navigation: {
         current: 1,
@@ -44,7 +45,7 @@ const appReducer = (state, action) => {
     switch (action.type) {
         case TYPES.LOGIN:
             const { uid, email, name } = action.payload;
-            return { ...state, user: { uid, email, name } }
+            return { ...state, user: { uid, email, name, isLogged: true } }
         case TYPES.LOGOUT:
             return appInitialState;
         case TYPES.NEXT_LEVEL:
