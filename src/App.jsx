@@ -11,6 +11,7 @@ import Level3 from "./views/Level3/Level3";
 import FinalStatistics from "./views/FinalStatistics/FinalStatistics";
 import Level4 from "./views/Level4/Level4";
 import PrivateRoutes from "./components/PrivateRoutes/PrivateRoutes";
+import Video from "./views/Video/Video";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<PrivateRoutes>
             <Routes>
+              <Route path="/video" element={< Video />} />
               {/* Clase */}
               <Route path="/nivel/1" element={< Level1 />} />
               {/* Objeto */}

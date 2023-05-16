@@ -1,0 +1,25 @@
+.video-experience{
+    background-color: var(--second-bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.video-experience .video{
+    display: flex;
+    justify-content: center;
+    padding: 0 34px 0 34px; 
+}
+
+.video-experience .video iframe{
+    width: 100%;
+    height: auto;
+    min-height: 720px;
+}
+
+.video-experience .button-skip{
+    display: flex;
+    justify-content: center;
+    padding-top: 44px;
+}

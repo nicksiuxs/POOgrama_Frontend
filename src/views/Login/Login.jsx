@@ -21,7 +21,7 @@ const Login = () => {
             : "";
         if (userLocalStorage) {
             dispatch({ type: TYPES.LOGIN, payload: userLocalStorage });
-            navigate("/nivel/1")
+            navigate("/video")
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
