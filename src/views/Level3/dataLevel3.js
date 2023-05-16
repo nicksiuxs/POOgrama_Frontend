@@ -22,14 +22,26 @@ const containers = [
 ];
 
 const data = [
-    { id: 1, name: "motorbike", class: "vehicle", img: motorbike },
-    { id: 2, name: "boy", class: "person", img: boy },
-    { id: 3, name: "dog", class: "animal", img: dog },
-    { id: 4, name: "girl", class: "person", img: girl },
-    { id: 5, name: "cat", class: "animal", img: cat },
-    { id: 6, name: "car", class: "vehicle", img: car },
+    { id: "1", name: "motorbike", class: "vehicle", img: motorbike },
+    { id: "2", name: "boy", class: "person", img: boy },
+    { id: "3", name: "dog", class: "animal", img: dog },
+    { id: "4", name: "girl", class: "person", img: girl },
+    { id: "5", name: "cat", class: "animal", img: cat },
+    { id: "6", name: "car", class: "vehicle", img: car },
 ];
 
+const incorrectModal = {
+    isShow: true,
+    title: "¡Incorrecto!",
+    message: "Revisa nuevamente los atributos que pertenecen a la clase Auto. Inténtalo de nuevo.",
+    labelButton: "Reintentar"
+}
 
+const correctModal = {
+    isShow: true,
+    title: "!Correcto!",
+    message: "",
+    labelButton: "Siguiente nivel"
+}
 
-export { levelInformation, containers, data };
+export { levelInformation, containers, data, incorrectModal, correctModal };
