@@ -18,10 +18,14 @@ const Level1 = () => {
     const { dispatch } = useAppContext();
 
     const handleSetFruits = (element) => {
-        setFruits([...fruits, element])
+        if (Array.isArray(element)) {
+            setFruits(element)
+        } else {
+            setFruits([...fruits, element])
+        }
     }
 
-    const { isDragging, listItems, handleDragging, handleUpdateList, handleResetList } = useDragAndDrop(data, handleSetFruits);
+    const { isDragging, listItems, handleDragging, handleUpdateList, handleResetList } = useDragAndDrop(data, handleSetFruits, fruits);
 
     const handleWrongAnswer = () => {
         setFruits([]);
