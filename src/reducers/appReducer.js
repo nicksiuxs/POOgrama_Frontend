@@ -9,7 +9,7 @@ const appInitialState = {
     },
     navigation: {
         current: 1,
-        total: 4
+        total: 5
     },
     score: {
         "1": {
@@ -26,6 +26,10 @@ const appInitialState = {
         },
         "4": {
             topic: "Método",
+            attemps: 0
+        },
+        "5": {
+            topic: "Asociación",
             attemps: 0
         }
     },

@@ -1,0 +1,34 @@
+.drop-box-relation {
+    width: 40%;
+    max-width: 300px;
+    height: 95%;
+}
+
+.cont-relation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-relation p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.drop-zone-relation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 80px;
+    width: 80%;
+    height: 310px;
+    padding: 20px 0;
+    border: solid 2px rgba(255, 255, 255, 0);
+}
+
+.relation-images {
+    max-height: 170px;
+    flex-basis: 1% !important;
+}

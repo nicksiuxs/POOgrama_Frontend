@@ -7,7 +7,7 @@ import Modal from '../../components/Modal/Modal'
 import { levelInformation, containers, data, incorrectModal, correctModal } from './dataLevel3'
 import useAppContext from "../../customHooks/useAppContext";
 import TYPES from "../../reducers/types";
-import './level3.css'
+import './level3.css';
 
 const Level3 = () => {
 

@@ -51,7 +51,7 @@ const Level4 = () => {
     const handleRightAnswer = () => {
         setModal({ ...modal, isShow: false });
         dispatch({ type: TYPES.NEXT_LEVEL });
-        navigate("/estadisticas");
+        navigate("/nivel/5");
     };
 
     const getAnswers = () => {

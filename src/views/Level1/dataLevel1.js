@@ -40,7 +40,7 @@ const incorrectModal = {
 
 const correctModal = {
     isShow: true,
-    title: "!Correcto!",
+    title: "¡Correcto!",
     message: "",
     labelButton: "Siguiente nivel"
 }

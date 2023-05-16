@@ -33,13 +33,13 @@ const data = [
 const incorrectModal = {
     isShow: true,
     title: "¡Incorrecto!",
-    message: "Revisa nuevamente los atributos que pertenecen a la clase Auto. Inténtalo de nuevo.",
+    message: "Vuelve a revisar los objetos seleccionados, revisa las notas e intenta nuevamente.",
     labelButton: "Reintentar"
 }
 
 const correctModal = {
     isShow: true,
-    title: "!Correcto!",
+    title: "¡Correcto!",
     message: "",
     labelButton: "Siguiente nivel"
 }

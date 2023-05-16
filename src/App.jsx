@@ -8,8 +8,9 @@ import Login from "./views/Login/Login";
 import Level1 from "./views/Level1/Level1";
 import Level2 from "./views/Level2/Level2";
 import Level3 from "./views/Level3/Level3";
-import FinalStatistics from "./views/FinalStatistics/FinalStatistics";
 import Level4 from "./views/Level4/Level4";
+import Level5 from "./views/Level5/Level5";
+import FinalStatistics from "./views/FinalStatistics/FinalStatistics";
 import PrivateRoutes from "./components/PrivateRoutes/PrivateRoutes";
 import Video from "./views/Video/Video";
 
@@ -31,6 +32,8 @@ function App() {
               <Route path="/nivel/3" element={< Level2 />} />
               {/* Método */}
               <Route path="/nivel/4" element={< Level4 />} />
+              {/* Asociación */}
+              <Route path="/nivel/5" element={< Level5 />} />
               <Route path="/estadisticas" element={< FinalStatistics />} />
             </Routes>
           </PrivateRoutes>} />
