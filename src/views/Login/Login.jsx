@@ -16,7 +16,6 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(localStorage.getItem("currentUser"))
         const userLocalStorage = localStorage.getItem("currentUser")
             ? JSON.parse(localStorage.getItem("currentUser"))
             : "";

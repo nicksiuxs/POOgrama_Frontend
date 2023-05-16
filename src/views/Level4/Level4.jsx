@@ -76,7 +76,6 @@ const Level4 = () => {
 
         if (!isCorrect) {
             dispatch({ type: TYPES.ADD_ATTEMP });
-            console.log("attemp");
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer });
         } else {
             dispatch({ type: TYPES.ADD_STARS });

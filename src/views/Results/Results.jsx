@@ -53,12 +53,18 @@ const styles = StyleSheet.create({
     },
 });
 
-const handleAttemps = {
-    0: "0",
-    1: "1",
-    2: "2",
-    3: "3"
+const handleAttemps = (attemps) => {
+
+    if (attemps === 0) {
+        return "3"
+    } else if (attemps > 0 && attemps < 2) {
+        return "2"
+    } else {
+        return "1"
+    }
 }
+
+
 
 const Results = ({ user, scores }) => {
     return (
@@ -76,7 +82,7 @@ const Results = ({ user, scores }) => {
                     {Object.keys(scores).map((score, index) => (
                         <View key={index} style={styles.tableRow}>
                             <Text style={styles.tableCell}>{scores[score].topic}</Text>
-                            <Text style={styles.tableCell}>{handleAttemps[scores[score].attemps]}</Text>
+                            <Text style={styles.tableCell}>{handleAttemps(scores[score].attemps)}</Text>
                         </View>
                     ))}
                 </View>

@@ -42,7 +42,7 @@ const Level2 = () => {
     const handleRightAnswer = () => {
         setModal({ ...modal, isShow: false });
         dispatch({ type: TYPES.NEXT_LEVEL });
-        navigate("/estadisticas")
+        navigate("/nivel/4")
     }
 
     const getAnswers = () => {
@@ -59,7 +59,6 @@ const Level2 = () => {
 
         if (!isCorrect) {
             dispatch({ type: TYPES.ADD_ATTEMP });
-            console.log("attemp");
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
         } else {
             dispatch({ type: TYPES.ADD_STARS });

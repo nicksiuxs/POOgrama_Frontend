@@ -19,7 +19,7 @@ const FinalStatistics = () => {
 
 
     const handleBack = () => {
-        console.log(score);
+        dispatch({ type: TYPES.RESET_NAVIGATION })
         navigate("/nivel/1")
     }
 

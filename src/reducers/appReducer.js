@@ -85,7 +85,8 @@ const appReducer = (state, action) => {
             } else {
                 return { ...state, total: { totalStars: totalStars + 1, totalAttempts: newTotalAttempts } }
             }
-
+        case TYPES.RESET_NAVIGATION:
+            return { ...state, navigation: appInitialState.navigation }
         default:
             return state
     }

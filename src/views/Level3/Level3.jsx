@@ -29,6 +29,7 @@ const Level3 = () => {
             dropzone.addEventListener("dragover", handleDragOver, false);
             dropzone.addEventListener("drop", handleDrop, false);
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleWrongAnswer = () => {
@@ -45,21 +46,21 @@ const Level3 = () => {
 
     const getAnswers = () => {
         const auxAllAnswers = [];
-        const vehicle = {class: "vehicle", objects: []};
-        for(const element of document.getElementById("drop-zone-1").children){
-            vehicle.objects.push(data.find( el => el.id === element.id));
+        const vehicle = { class: "vehicle", objects: [] };
+        for (const element of document.getElementById("drop-zone-1").children) {
+            vehicle.objects.push(data.find(el => el.id === element.id));
             auxAllAnswers.push(element.id);
         };
 
-        const animal = {class: "animal", objects: []};
-        for(const element of document.getElementById("drop-zone-2").children){
-            animal.objects.push(data.find( el => el.id === element.id));
+        const animal = { class: "animal", objects: [] };
+        for (const element of document.getElementById("drop-zone-2").children) {
+            animal.objects.push(data.find(el => el.id === element.id));
             auxAllAnswers.push(element.id);
         };
 
-        const person = {class: "person", objects: []};
-        for(const element of document.getElementById("drop-zone-3").children){
-            person.objects.push(data.find( el => el.id === element.id));
+        const person = { class: "person", objects: [] };
+        for (const element of document.getElementById("drop-zone-3").children) {
+            person.objects.push(data.find(el => el.id === element.id));
             auxAllAnswers.push(element.id);
         };
 
@@ -69,10 +70,9 @@ const Level3 = () => {
     }
 
     const handleCheckAnswers = () => {
-        const isCorrect = answers.every( answer => answer.objects.every( el => el.class === answer.class ));
+        const isCorrect = answers.every(answer => answer.objects.every(el => el.class === answer.class));
         if (!isCorrect) {
             dispatch({ type: TYPES.ADD_ATTEMP });
-            console.log("attemp");
             setModal({ ...incorrectModal, handleClick: handleWrongAnswer })
         } else {
             dispatch({ type: TYPES.ADD_STARS });
@@ -135,15 +135,15 @@ const Level3 = () => {
                                     key={i}
                                     className="drag-item object-images"
                                     draggable="true"
-                                    id={item.id} 
-                                    src={item.img} 
+                                    id={item.id}
+                                    src={item.img}
                                     alt={item.class} />
                                 )
                             }
                         )
                     }
                 </div>
-                <Button title="Verificar respuesta" onClick={handleCheckAnswers} disabled={ allAnswers.length > 5 ? false : true }/>
+                <Button title="Verificar respuesta" onClick={handleCheckAnswers} disabled={allAnswers.length > 5 ? false : true} />
             </div>
             {modal.isShow ? <Modal {...modal} /> : null}
         </main>
