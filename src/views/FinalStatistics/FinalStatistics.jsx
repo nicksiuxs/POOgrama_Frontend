@@ -20,7 +20,7 @@ const FinalStatistics = () => {
 
     const handleBack = () => {
         dispatch({ type: TYPES.RESET_NAVIGATION })
-        navigate("/nivel/1")
+        navigate("/video")
     }
 
     const handelLogout = () => {

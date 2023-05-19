@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import StartExperience from "./views/StartExperience/StartExperience";
 
@@ -35,6 +35,7 @@ function App() {
               {/* Asociación */}
               <Route path="/nivel/5" element={< Level5 />} />
               <Route path="/estadisticas" element={< FinalStatistics />} />
+              <Route path="/*" element={< Navigate to="/"/>} />
             </Routes>
           </PrivateRoutes>} />
         </Routes>
