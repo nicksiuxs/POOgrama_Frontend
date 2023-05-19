@@ -6,7 +6,9 @@ const levelInformation = {
     example: "Para brindarte una mejor ayuda, puedes observar el siguiente ejemplo.",
     imageExample: exampleImage,
     exampleDescription: "Como observamos, la clase persona se compone de unas características, para este ejemplo usamos algunas más conocidas y fáciles de identificar. Toda persona tiene nombre, edad, peso y género.",
-    activity: "A continuación, debes arrastrar a la clase Auto en la sección de la derecha, todos los atributos correctos que consideres que definen a esta clase, estos atributos los puedes encontrar en la sección inferior de la derecha."
+    activity: "A continuación, debes arrastrar a la clase Auto en la sección de la derecha, todos los atributos correctos que consideres que definen a esta clase, estos atributos los puedes encontrar en la sección inferior de la derecha.",
+    reference: 
+        "(Programación orientada a objetos, p. 8)"
 }
 
 const containers = [

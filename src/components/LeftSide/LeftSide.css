@@ -20,6 +20,20 @@
     margin-bottom: 25px;
 }
 
+.left-side .reference {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.left-side .reference > a{
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    text-align: center;
+}
+
 .left-side .left-side-definition{
     margin-bottom: 20px;
 }

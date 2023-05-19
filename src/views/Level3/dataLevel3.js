@@ -12,7 +12,9 @@ const levelInformation = {
     example: "Para brindarte una mejor ayuda, puedes observar el siguiente ejemplo",
     imageExample: exampleImage,
     exampleDescription: "En el ejemplo vemos a la izquierda la clase Fruta, la plantilla de la entidad. A la derecha observamos 3 entes u objetos creados a partir de esta clase.",
-    activity: "Tienes tres clases, la clase Vehiculo, Animal y Persona. Arrastra los objetos identificando a la clase a la que pertenecen."
+    activity: "Tienes tres clases, la clase Vehiculo, Animal y Persona. Arrastra los objetos identificando a la clase a la que pertenecen.",
+    reference: 
+        "(Programación orientada a objetos, p. 8)"
 }
 
 const containers = [

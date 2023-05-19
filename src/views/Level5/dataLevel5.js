@@ -4,12 +4,14 @@ import tree from "../../assets/tree.png";
 import phone from "../../assets/phone.png";
 
 const levelInformation = {
-    title: "Atributo",
+    title: "Asocicación",
     definition: "En cuanto a relaciones entre clases, tenemos la relación de asociación, la cual se da en el momento en el que dos clases totalmente independientes, se unen para funcionar en conjunto. Ten en cuenta que esta relación se representa por medio de una flecha y se puede leer como “usa un” ó “tiene un”. Veamos el siguiente ejemplo:",
     example: "",
     imageExample: exampleImage,
     exampleDescription: "Como observamos, la clase persona se relaciona con la clase auto, esto porque una persona puede tener un auto para transportarse, y el auto va a pertenecer a una persona, la flecha siempre indicando a la clase que es contenida o usada por otra. Siendo totalmente independientes, es decir, que no dependen la una de la otra para existir, son dos clases que se juntan para funcionar en conjunto.",
-    activity: "En este ejercicio, debes arrastrar dos clases de las presentadas en la sección de la derecha, que consideres que trabajan en conjunto formando la relación de asociación."
+    activity: "En este ejercicio, debes arrastrar dos clases de las presentadas en la sección de la derecha, que consideres que trabajan en conjunto formando la relación de asociación.",
+    reference: 
+        "(Programación orientada a objetos, p. 39 'Relación de uso')"
 }
 
 const data = [

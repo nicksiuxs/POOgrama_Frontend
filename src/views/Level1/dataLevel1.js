@@ -16,6 +16,8 @@ const levelInformation = {
         "En el ejemplo vemos a la izquierda la clase persona, la plantilla de la entidad. A la derecha observamos 3 entes u objetos creados a partir de esta clase.",
     activity:
         "Para esta primera actividad, deberás arrastrar los objetos que pertenezcan a la clase dada dentro del recuadro marcado.",
+    reference: 
+        "(Programación orientada a objetos, pp. 7-8)"
 };
 
 const containers = [

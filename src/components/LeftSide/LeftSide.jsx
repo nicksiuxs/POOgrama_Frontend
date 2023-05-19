@@ -2,7 +2,7 @@ import React from 'react';
 import "./LeftSide.css";
 import LevelNavigation from '../LevelNavigation/LevelNavigation';
 
-const LeftSide = ({ title, definition, example, imageExample, exampleDescription, activity }) => {
+const LeftSide = ({ title, definition, example, imageExample, exampleDescription, activity, reference }) => {
     return (
         <aside className="left-side">
             <div>
@@ -14,6 +14,7 @@ const LeftSide = ({ title, definition, example, imageExample, exampleDescription
                 </figure>
                 <p className="left-side-example-description">{exampleDescription}</p>
                 <p>{activity}</p>
+                <p className="reference"><a href="https://www.etsisi.upm.es/sites/default/files/curso_2013_14/MASTER/MIW.JEE.POOJ.pdf" target='_blank'>{reference}</a></p>
             </div>
             <LevelNavigation />
         </aside>
