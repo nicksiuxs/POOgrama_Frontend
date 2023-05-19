@@ -4,7 +4,7 @@ import tree from "../../assets/tree.png";
 import phone from "../../assets/phone.png";
 
 const levelInformation = {
-    title: "Asocicación",
+    title: "Asociación",
     definition: "En cuanto a relaciones entre clases, tenemos la relación de asociación, la cual se da en el momento en el que dos clases totalmente independientes, se unen para funcionar en conjunto. Ten en cuenta que esta relación se representa por medio de una flecha y se puede leer como “usa un” ó “tiene un”. Veamos el siguiente ejemplo:",
     example: "",
     imageExample: exampleImage,

@@ -9,7 +9,7 @@ const LevelStars = () => {
     const { state: { navigation, score } } = useAppContext();
     const currentScore = score[navigation.current].attemps;
 
-    if (currentScore <= 1) {
+    if (currentScore <1) {
         return (
             <div className="level-stars">
                 <img src={Star} alt="start" />
@@ -17,7 +17,7 @@ const LevelStars = () => {
                 <img src={Star} alt="start" />
             </div>
         )
-    } else if (currentScore > 1 && currentScore <= 2) {
+    } else if (currentScore >= 1 && currentScore < 2) {
         return <div className="level-stars">
             <img src={Star} alt="start" />
             <img src={Star} alt="start" />
