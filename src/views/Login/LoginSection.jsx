@@ -25,7 +25,7 @@ const LoginSection = ({ handleError }) => {
             if (userAuth) {
                 const userInfo = await getUser(userAuth.uid)
                 dispatch({ type: TYPES.LOGIN, payload: userInfo });
-                navigate("/nivel/1", { replace: true })
+                navigate("/video", { replace: true })
             }
         } catch (error) {
             handleError(error);
